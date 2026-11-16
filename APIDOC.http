@@ -1,0 +1,81 @@
+#api call for creating user
+###
+POST  http://127.0.0.1:8000/accounts/register/
+Content-Type: application/json
+
+{
+    "username":"hari",
+    "password":"password@123",
+    "email":"hari@gmail.com",
+    "phone":"7034567856"
+}
+
+#api call for fetching token
+###
+POST  http://127.0.0.1:8000/accounts/login/
+Content-Type: application/json
+
+{
+    "username":"delsa",
+    "password":"password@123"
+}
+
+#api call for fetching current user
+###
+GET http://127.0.0.1:8000/accounts/profile/
+Accept: application/json
+Authorization: Token 34b80672ff01aa85d42e266f6faac2841cca0dc3
+
+#api call for fetching lead
+###
+GET http://127.0.0.1:8000/leads/
+Accept: application/json
+Authorization: Token 34b80672ff01aa85d42e266f6faac2841cca0dc3
+
+#api call for creating lead
+###
+POST http://127.0.0.1:8000/leads/
+Content-Type: application/json
+Authorization: Token 34b80672ff01aa85d42e266f6faac2841cca0dc3
+
+{
+    "name":"Arun Kumar",
+    "email":"arun@gmail.com",
+    "phone":"7890675645",
+    "company":"ABC Technologies",
+    "source":"referral",
+    "status":"new"
+
+}
+
+#api call for retrieving lead
+###
+GET http://127.0.0.1:8000/leads/1/
+Accept: application/json
+Authorization: Token 34b80672ff01aa85d42e266f6faac2841cca0dc3
+
+#api call for updating partially
+###
+PATCH http://127.0.0.1:8000/leads/1/
+Content-Type: application/json
+Authorization: Token 34b80672ff01aa85d42e266f6faac2841cca0dc3
+
+#api call for updating lead
+###
+PUT http://127.0.0.1:8000/leads/1/
+Content-Type: application/json
+Authorization: Token 34b80672ff01aa85d42e266f6faac2841cca0dc3
+
+{
+    "name":"Arun Kumar",
+    "email":"arun@gmail.com",
+    "phone":"7890675645",
+    "company":"ABC Technologies",
+    "source":"website",
+    "status":"new"
+}
+
+#api call for deleting lead
+DELETE http://127.0.0.1:8000/leads/1/
+Accept: application/json
+Authorization: Token 34b80672ff01aa85d42e266f6faac2841cca0dc3
